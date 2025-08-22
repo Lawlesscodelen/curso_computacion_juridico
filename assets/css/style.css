@@ -3244,4 +3244,55 @@ p.form-message.success, p.form-message.error {
     color: #fff;
     background-color: #0067f4; }
 
+/* Custom responsive fixes for features section */
+.features-title-icon {
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.features-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-right: 10px;
+}
+
+.features-title a {
+  word-wrap: break-word !important;
+  hyphens: auto;
+}
+
+@media (max-width: 767px) {
+  .features-title-icon {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 15px;
+  }
+  
+  .features-title {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .features-icon i {
+    font-size: 2.5em !important;
+  }
+  
+  .features-title a {
+    font-size: 20px !important;
+    line-height: 28px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .features-icon i {
+    font-size: 2.8em !important;
+  }
+  
+  .features-title a {
+    font-size: 22px !important;
+    line-height: 30px !important;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
