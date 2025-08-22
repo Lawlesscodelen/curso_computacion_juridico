@@ -3,10 +3,53 @@
  * Combines: preloader, smooth scrolling, navbar sticky
  */
 
+// ===== PRELOADER FALLBACK (Vanilla JS - executes immediately)
+(function() {
+    "use strict";
+    
+    var preloaderHidden = false;
+    
+    function hidePreloader() {
+        if (preloaderHidden) return;
+        preloaderHidden = true;
+        
+        var preloader = document.querySelector('.preloader');
+        if (preloader) {
+            preloader.style.transition = 'opacity 0.5s ease';
+            preloader.style.opacity = '0';
+            setTimeout(function() {
+                preloader.style.display = 'none';
+            }, 500);
+        }
+    }
+    
+    // Timeout de seguridad - garantiza que se oculte en máximo 5 segundos
+    setTimeout(hidePreloader, 5000);
+    
+    // DOMContentLoaded - más rápido que window.load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(hidePreloader, 500);
+        });
+    } else {
+        setTimeout(hidePreloader, 500);
+    }
+    
+    // window.load como respaldo adicional
+    window.addEventListener('load', function() {
+        setTimeout(hidePreloader, 500);
+    });
+    
+    // Detectar errores de carga de recursos críticos
+    window.addEventListener('error', function() {
+        setTimeout(hidePreloader, 1000);
+    });
+})();
+
 $(document).ready(function() {
     "use strict";
     
-    //===== Preloader
+    //===== Preloader (jQuery fallback - mantener para compatibilidad)
     $(window).on('load', function() {
         $('.preloader').delay(500).fadeOut(500);
     });
