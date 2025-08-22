@@ -1,0 +1,73 @@
+/*!
+* LineIcons Optimized - Only used icons
+* Reduced from 28K to ~2K by keeping only necessary icons
+* Icons used: graduation, rocket, diamond, clipboard, write, twitter-original, linkedin-original, linkedin, github, envelope
+*/
+
+@font-face {
+  font-family: 'LineIcons';
+  src: url('../fonts/LineIcons.eot');
+  src: url('../fonts/LineIcons.eot') format('embedded-opentype'), 
+       url('../fonts/LineIcons.woff2') format('woff2'), 
+       url('../fonts/LineIcons.woff') format('woff'), 
+       url('../fonts/LineIcons.ttf') format('truetype'), 
+       url('../fonts/LineIcons.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*------------------------
+	base class definition
+-------------------------*/
+.lni {
+  display: inline-block;
+  font: normal normal normal 1em/1 'LineIcons';
+  speak: none;
+  text-transform: none;
+  /* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*------------------------
+  Only used icons
+-------------------------*/
+.lni-graduation::before {
+  content: "\eada";
+}
+
+.lni-rocket::before {
+  content: "\eb71";
+}
+
+.lni-diamond::before {
+  content: "\ea8b";
+}
+
+.lni-clipboard::before {
+  content: "\ea62";
+}
+
+.lni-write::before {
+  content: "\ebf8";
+}
+
+.lni-twitter-original::before {
+  content: "\ebd6";
+}
+
+.lni-linkedin-original::before {
+  content: "\eb14";
+}
+
+.lni-linkedin::before {
+  content: "\eb15";
+}
+
+.lni-github::before {
+  content: "\eace";
+}
+
+.lni-envelope::before {
+  content: "\eaab";
+}
