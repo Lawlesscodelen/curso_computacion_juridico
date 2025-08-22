@@ -1546,4 +1546,9 @@ p.form-message.success, p.form-message.error {
   }
 }
 
+/* Override contact-area background to white for newsletter section */
+#Contacto.contact-area {
+  background-color: #fff !important;
+}
+
 /*# sourceMappingURL=style.css.map */

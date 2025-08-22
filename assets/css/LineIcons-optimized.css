@@ -1,7 +1,7 @@
 /*!
-* LineIcons Optimized - Only used icons
+* LineIcons Optimized - Only used icons  
 * Reduced from 28K to ~2K by keeping only necessary icons
-* Icons used: graduation, rocket, diamond, clipboard, write, twitter-original, linkedin-original, linkedin, github, envelope
+* Icons used: graduation, rocket, diamond, clipboard, write, twitter-original, linkedin-original, linkedin, github, envelope, link, mailchimp, certificate
 */
 
 @font-face {
@@ -70,4 +70,16 @@
 
 .lni-envelope::before {
   content: "\eaab";
+}
+
+.lni-link::before {
+  content: "\eb13";
+}
+
+.lni-mailchimp::before {
+  content: "\eb1b";
+}
+
+.lni-certificate::before {
+  content: "\ea52";
 }
