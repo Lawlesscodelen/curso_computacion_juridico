@@ -106,4 +106,36 @@ $(document).ready(function() {
             }
         });
     });
+    
+    //===== Scroll Reveal (aparece desde abajo al entrar en viewport)
+    (function () {
+    // Respeta "reducir movimiento"
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-visible'); });
+        return;
+    }
+
+    var items = document.querySelectorAll('.reveal');
+
+    // Fallback sin IO
+    if (!('IntersectionObserver' in window)) {
+        items.forEach(function(el){ el.classList.add('is-visible'); });
+        return;
+    }
+
+    var io = new IntersectionObserver(function(entries, obs){
+        entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+            var el = entry.target;
+            var delay = el.getAttribute('data-reveal-delay') || 0;
+            el.style.transitionDelay = delay + 'ms';
+            el.classList.add('is-visible');
+            obs.unobserve(el); // solo una vez
+        }
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
+
+    items.forEach(function(el){ io.observe(el); });
+    })();
+
 });

@@ -1635,3 +1635,17 @@ p.form-message.success, p.form-message.error {
   .single-features,
   .social li a { transition: none !important; transform: none !important; }
 }
+
+/* Scroll reveal básico: aparece desde abajo */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity .6s ease, transform .6s ease;
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
